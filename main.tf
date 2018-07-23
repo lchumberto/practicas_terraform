@@ -1,3 +1,8 @@
+### variables
+
+variable "aws_access_key" {}
+variable "aws_secret_key" {}
+
 ###  AWS PROVIDER ###
 
 provider "aws" {
@@ -11,11 +16,11 @@ resource "aws_instance" "example" {
   instance_type       = "t2.micro"
   vpc_security_group_ids = ["${aws_security_group.instance.id}"]
 
-  user_data = <<-EOF
-		#!/bin/bash
-		echo "Hello, World" > index.html
-		nohup busybox httpd -f -p "${var.server_port}"
-		EOF
+#  user_data = <<-EOF
+#		#!/bin/bash
+#		echo "Hello, World" > index.html
+#		nohup busybox httpd -f -p "${var.server_port}"
+#		EOF
 
   tags {
     Name = "terrform-example"
