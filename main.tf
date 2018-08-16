@@ -24,9 +24,9 @@ resource "aws_instance" "example" {
 #		nohup busybox httpd -f -p "${var.server_port}"
 #		EOF
 
-  tags {
-    Name = "terrform-example"
-  }
+ # tags {
+#    Name = "terrform-example"
+#  }
 }
 
 ### AWS SG ###
